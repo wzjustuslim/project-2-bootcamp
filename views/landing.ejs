@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/public/styles.css" />
+
+    <title>Landing</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row g-0" style="height: 80px">
+        <div class="col d-flex align-items-center">
+          <div class="row">
+            <div class="col">
+              <i class="fas fa-igloo fs-2 text-light"></i>
+            </div>
+            <div class="col ps-0 pt-1">
+              <span class="text-light fw-bold fs-5">waterbnb</span>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-between">
+          <span class="text-light">Places to stay</span
+          ><span class="text-light">Experiences</span
+          ><span class="text-light">Online Experiences</span>
+        </div>
+        <div class="col d-flex align-items-center justify-content-end">
+          <div class="row">
+            <div class="col">
+              <!-- Localization Start -->
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-dark rounded-circle"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style="width: 46px; height: 42px"
+              >
+                <i class="fas fa-globe-asia"></i>
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="container p-0">
+                        <div class="row">
+                          <div class="col">
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <!-- Tab Start -->
+                            <ul class="nav">
+                              <li class="nav-item">
+                                <a
+                                  class="nav-link active text-muted ps-2"
+                                  aria-current="page"
+                                  href="#"
+                                  >Language and region</a
+                                >
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-muted" href="#"
+                                  >Currency</a
+                                >
+                              </li>
+                            </ul>
+                            <!-- Tab End -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <h2 class="h5 py-2">Suggested languages and regions</h2>
+                      <ul class="nav py-2">
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                            >English<br /><span class="text-muted fw-light"
+                              >United States</span
+                            ></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                            >English<br /><span class="text-muted fw-light"
+                              >United Kingdom</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                      <h2 class="h5 pt-5 pb-2">Choose a language and region</h2>
+                      <ul class="nav py-2">
+                        <li class="nav-item p-2">
+                          <a
+                            class="
+                              btn btn-light
+                              text-start
+                              border border-1 border-dark
+                              active
+                            "
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                            >English<br /><span class="text-muted fw-light"
+                              >Singapore</span
+                            ></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            Azərbaycan dili<br /><span
+                              class="text-muted fw-light"
+                            >
+                              Azərbaycan
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            简体中文<br /><span class="text-muted fw-light">
+                              中国
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                        <li class="nav-item p-2">
+                          <a
+                            class="btn btn-light text-start"
+                            href="#"
+                            role="button"
+                            style="width: 11rem"
+                          >
+                            한국어<br /><span class="text-muted fw-light">
+                              대한민국
+                            </span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Localization End -->
+            </div>
+            <div class="col g-0">
+              <!-- Dropdown Start -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light rounded-pill"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="5,15"
+                  aria-expanded="false"
+                  style="width: 77px; height: 42px; padding: 5px 5px 5px 12px"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <i class="fas fa-bars fs-6"></i>
+                    <i class="fas fa-user-circle fs-3 text-secondary"></i>
+                  </div>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end p-2 rounded-3"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li><a class="dropdown-item" href="#">Sign up</a></li>
+                  <li><a class="dropdown-item" href="#">Log in</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Host your home</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Host an experience</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Help</a></li>
+                </ul>
+              </div>
+              <!-- Dropdown End -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search Bar Start -->
+      <div class="row">
+        <div class="col">
+          <div
+            class="row rounded-pill bg-light mx-auto d-flex"
+            style="width: 848px; height: 64px"
+          >
+            <div
+              class="col-4 rounded-pill bg-light flex-grow-1 shadow-sm"
+              style="width: 31%; height: 100%"
+            >
+              <div class="ps-3 pt-1">
+                <label class="small fw-bold" for="location">Location</label>
+              </div>
+              <div class="ps-2">
+                <input
+                  class="form-control-sm border border-0 bg-light"
+                  type="text"
+                  name="location"
+                  placeholder="Where are you going?"
+                />
+              </div>
+            </div>
+            <div
+              class="col-2 rounded-pill bg-light shadow-sm"
+              style="width: 21%; height: 100%"
+            >
+              <div class="ps-3 pt-1">
+                <label class="small fw-bold" for="checkIn">Check in</label>
+              </div>
+              <div class="ps-2">
+                <input
+                  class="form-control-sm border border-0 bg-light"
+                  type="date"
+                  name="checkIn"
+                  style="width: 95%"
+                />
+              </div>
+            </div>
+            <div
+              class="col-2 rounded-pill bg-light shadow-sm"
+              style="width: 21%; height: 100%"
+            >
+              <div class="ps-3 pt-1">
+                <label class="small fw-bold" for="checkOut">Check out</label>
+              </div>
+              <div class="ps-2">
+                <input
+                  class="form-control-sm border border-0 bg-light"
+                  type="date"
+                  name="checkOut"
+                  style="width: 95%"
+                />
+              </div>
+            </div>
+            <!-- Guest Start -->
+
+            <div class="col-3 dropdown p-0 flex-grow-1" style="height: 100%">
+              <button
+                class="btn btn-light dropdown-toggle rounded-pill shadow-sm"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 100%; height: 100%"
+              >
+                Dropdown button
+                <a href="#" class="rounded-circle bg-danger"
+                  ><i class="fas fa-search"></i
+                ></a>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Guest End -->
+          </div>
+        </div>
+      </div>
+      <!-- Search Bar End -->
+    </div>
+
+    <hr />
+    <form action="/listing" method="get"></form>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

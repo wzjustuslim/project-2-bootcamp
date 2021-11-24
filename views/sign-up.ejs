@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Sign-up Page</h1>
+    <form
+      action="/sign-up"
+      method="post"
+      style="border: solid; border-color: red"
+    >
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" />
+      </div>
+
+      <div>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" />
+      </div>
+
+      <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" />
+      </div>
+
+      <div>
+        <label for="birthday">Birthday</label>
+        <input type="date" name="birthday" />
+      </div>
+
+      <div>
+        <input type="hidden" name="isHost" value="false" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
