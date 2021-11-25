@@ -346,8 +346,8 @@
             style="width: 848px; height: 64px"
           >
             <div
-              class="col-4 rounded-pill bg-light flex-grow-1 shadow-sm"
-              style="width: 31%; height: 100%"
+              class="col-4 rounded-pill bg-light shadow-sm"
+              style="height: 100%"
             >
               <div class="ps-3 pt-1">
                 <label class="small fw-bold" for="location">Location</label>
@@ -362,8 +362,8 @@
               </div>
             </div>
             <div
-              class="col-2 rounded-pill bg-light shadow-sm"
-              style="width: 21%; height: 100%"
+              class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
+              style="height: 100%"
             >
               <div class="ps-3 pt-1">
                 <label class="small fw-bold" for="checkIn">Check in</label>
@@ -378,8 +378,8 @@
               </div>
             </div>
             <div
-              class="col-2 rounded-pill bg-light shadow-sm"
-              style="width: 21%; height: 100%"
+              class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
+              style="height: 100%"
             >
               <div class="ps-3 pt-1">
                 <label class="small fw-bold" for="checkOut">Check out</label>
@@ -395,29 +395,133 @@
             </div>
             <!-- Guest Start -->
 
-            <div class="col-3 dropdown p-0 flex-grow-1" style="height: 100%">
-              <button
-                class="btn btn-light dropdown-toggle rounded-pill shadow-sm"
+            <div class="col-2 dropdown p-0" style="height: 100%">
+              <div
+                class="btn btn-light rounded-pill shadow-sm"
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 style="width: 100%; height: 100%"
+                data-bs-offset="-110,15"
               >
-                Dropdown button
-                <a href="#" class="rounded-circle bg-danger"
-                  ><i class="fas fa-search"></i
-                ></a>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <div class="text-start small fw-bold ps-3" style="height: 50%">
+                  Guests
+                </div>
+                <div
+                  class="text-start small text-secondary ps-3"
+                  style="height: 50%"
+                >
+                  Add Guests
+                </div>
+              </div>
+              <ul
+                style="border-radius: 5%"
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                    style="width: 330px; height: 70px"
+                  >
+                    <label class="p-4 fw-bold" for="adults"
+                      >Adults<br /><small class="text-muted fw-light"
+                        >Ages 13 or above</small
+                      ></label
+                    >
+                    <input
+                      class="m-4"
+                      type="number"
+                      min="0"
+                      max="8"
+                      name="adults"
+                    />
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                    style="width: 330px; height: 70px"
+                  >
+                    <label class="p-4 fw-bold" for="children"
+                      >Children<br /><small class="text-muted fw-light"
+                        >Ages 2–12</small
+                      ></label
+                    >
+                    <input
+                      class="m-4"
+                      type="number"
+                      min="0"
+                      max="5"
+                      name="children"
+                      disabled
+                    />
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                    style="width: 330px; height: 70px"
+                  >
+                    <label class="p-4 fw-bold" for="infants"
+                      >Infants<br /><small class="text-muted fw-light"
+                        >Under 2</small
+                      ></label
+                    >
+                    <input
+                      class="m-4"
+                      type="number"
+                      min="0"
+                      max="5"
+                      name="infants"
+                      disabled
+                    />
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                    style="width: 330px"
+                  >
+                    <label class="p-4 fw-bold" for="pets">Pets</label>
+                    <input
+                      class="m-4"
+                      type="number"
+                      min="0"
+                      max="5"
+                      name="pets"
+                      disabled
+                    />
+                  </div>
+                  <div class="px-4 pb-2 small text-muted fw-light">
+                    If you're lucky enough to have more than 2 pets with you, be
+                    sure to let your host know.
+                  </div>
                 </li>
               </ul>
             </div>
 
+            <div
+              class="col-1 p-0 rounded-pill bg-light shadow-sm"
+              style="height: 100%"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center"
+                style="height: 100%"
+              >
+                <button
+                  class="bg-danger rounded-circle border border-0"
+                  style="width: 50px; height: 50px"
+                  type="submit"
+                >
+                  <i class="fas fa-search text-light"></i>
+                </button>
+              </div>
+            </div>
             <!-- Guest End -->
           </div>
         </div>
@@ -427,6 +531,10 @@
 
     <hr />
     <form action="/listing" method="get"></form>
+    <div class="bg-danger" style="height: 60px">
+      <div class="bg-primary" style="height: 10px"></div>
+      <div class="bg-warning" style="height: 10px"></div>
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
