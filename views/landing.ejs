@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link href="/public/styles.css" rel="stylesheet" />
+
     <!-- Fontawesome CDN -->
     <link
       rel="stylesheet"
@@ -21,8 +23,6 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="/public/styles.css" />
-
     <title>Landing</title>
   </head>
   <body class="bg-dark">
@@ -31,17 +31,25 @@
         <div class="col d-flex align-items-center">
           <div class="row">
             <div class="col">
-              <i class="fas fa-igloo fs-2 text-light"></i>
+              <a href="#" class="text-decoration-none"
+                ><i class="fas fa-igloo fs-2 text-light"></i
+              ></a>
             </div>
             <div class="col ps-0 pt-1">
-              <span class="text-light fw-bold fs-5">waterbnb</span>
+              <a href="#" class="text-decoration-none">
+                <span class="text-light fw-bold fs-5">waterbnb</span>
+              </a>
             </div>
           </div>
         </div>
         <div class="col d-flex align-items-center justify-content-between">
-          <span class="text-light">Places to stay</span
-          ><span class="text-light">Experiences</span
-          ><span class="text-light">Online Experiences</span>
+          <a href="#" class="text-decoration-none">
+            <span class="text-light">Places to stay</span></a
+          ><a href="#" class="text-decoration-none">
+            <span class="text-light">Experiences</span> </a
+          ><a href="#" class="text-decoration-none">
+            <span class="text-light">Online Experiences</span>
+          </a>
         </div>
         <div class="col d-flex align-items-center justify-content-end">
           <div class="row">
@@ -339,203 +347,461 @@
         </div>
       </div>
       <!-- Search Bar Start -->
-      <div class="row">
-        <div class="col">
-          <div
-            class="row rounded-pill bg-light mx-auto d-flex"
-            style="width: 848px; height: 64px"
-          >
+      <form action="/listing" method="get">
+        <div class="row">
+          <div class="col">
             <div
-              class="col-4 rounded-pill bg-light shadow-sm"
-              style="height: 100%"
-            >
-              <div class="ps-3 pt-1">
-                <label class="small fw-bold" for="location">Location</label>
-              </div>
-              <div class="ps-2">
-                <input
-                  class="form-control-sm border border-0 bg-light"
-                  type="text"
-                  name="location"
-                  placeholder="Where are you going?"
-                />
-              </div>
-            </div>
-            <div
-              class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
-              style="height: 100%"
-            >
-              <div class="ps-3 pt-1">
-                <label class="small fw-bold" for="checkIn">Check in</label>
-              </div>
-              <div class="ps-2">
-                <input
-                  class="form-control-sm border border-0 bg-light"
-                  type="date"
-                  name="checkIn"
-                  style="width: 95%"
-                />
-              </div>
-            </div>
-            <div
-              class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
-              style="height: 100%"
-            >
-              <div class="ps-3 pt-1">
-                <label class="small fw-bold" for="checkOut">Check out</label>
-              </div>
-              <div class="ps-2">
-                <input
-                  class="form-control-sm border border-0 bg-light"
-                  type="date"
-                  name="checkOut"
-                  style="width: 95%"
-                />
-              </div>
-            </div>
-            <!-- Guest Start -->
-
-            <div class="col-2 dropdown p-0" style="height: 100%">
-              <div
-                class="btn btn-light rounded-pill shadow-sm"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="width: 100%; height: 100%"
-                data-bs-offset="-110,15"
-              >
-                <div class="text-start small fw-bold ps-3" style="height: 50%">
-                  Guests
-                </div>
-                <div
-                  class="text-start small text-secondary ps-3"
-                  style="height: 50%"
-                >
-                  Add Guests
-                </div>
-              </div>
-              <ul
-                style="border-radius: 5%"
-                class="dropdown-menu"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                    style="width: 330px; height: 70px"
-                  >
-                    <label class="p-4 fw-bold" for="adults"
-                      >Adults<br /><small class="text-muted fw-light"
-                        >Ages 13 or above</small
-                      ></label
-                    >
-                    <input
-                      class="m-4"
-                      type="number"
-                      min="0"
-                      max="8"
-                      name="adults"
-                    />
-                  </div>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                    style="width: 330px; height: 70px"
-                  >
-                    <label class="p-4 fw-bold" for="children"
-                      >Children<br /><small class="text-muted fw-light"
-                        >Ages 2–12</small
-                      ></label
-                    >
-                    <input
-                      class="m-4"
-                      type="number"
-                      min="0"
-                      max="5"
-                      name="children"
-                      disabled
-                    />
-                  </div>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                    style="width: 330px; height: 70px"
-                  >
-                    <label class="p-4 fw-bold" for="infants"
-                      >Infants<br /><small class="text-muted fw-light"
-                        >Under 2</small
-                      ></label
-                    >
-                    <input
-                      class="m-4"
-                      type="number"
-                      min="0"
-                      max="5"
-                      name="infants"
-                      disabled
-                    />
-                  </div>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <div
-                    class="d-flex align-items-center justify-content-between"
-                    style="width: 330px"
-                  >
-                    <label class="p-4 fw-bold" for="pets">Pets</label>
-                    <input
-                      class="m-4"
-                      type="number"
-                      min="0"
-                      max="5"
-                      name="pets"
-                      disabled
-                    />
-                  </div>
-                  <div class="px-4 pb-2 small text-muted fw-light">
-                    If you're lucky enough to have more than 2 pets with you, be
-                    sure to let your host know.
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div
-              class="col-1 p-0 rounded-pill bg-light shadow-sm"
-              style="height: 100%"
+              class="row rounded-pill bg-light mx-auto d-flex"
+              style="width: 848px; height: 64px"
             >
               <div
-                class="d-flex align-items-center justify-content-center"
+                class="col-3 rounded-pill bg-light shadow-sm"
                 style="height: 100%"
               >
-                <button
-                  class="bg-danger rounded-circle border border-0"
-                  style="width: 50px; height: 50px"
-                  type="submit"
-                >
-                  <i class="fas fa-search text-light"></i>
-                </button>
+                <div class="ps-3 pt-1">
+                  <label class="small fw-bold" for="location">Location</label>
+                </div>
+                <div class="ps-2">
+                  <input
+                    class="form-control-sm border border-0 bg-light"
+                    type="text"
+                    name="location"
+                    placeholder="Where are you going?"
+                    required
+                  />
+                </div>
               </div>
+              <div
+                class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
+                style="height: 100%"
+              >
+                <div class="ps-3 pt-1">
+                  <label class="small fw-bold" for="checkIn">Check in</label>
+                </div>
+                <div class="ps-2">
+                  <input
+                    class="form-control-sm border border-0 bg-light"
+                    type="date"
+                    name="checkIn"
+                    style="width: 95%"
+                    required
+                  />
+                </div>
+              </div>
+              <div
+                class="col-2 rounded-pill bg-light shadow-sm flex-grow-1"
+                style="height: 100%"
+              >
+                <div class="ps-3 pt-1">
+                  <label class="small fw-bold" for="checkOut">Check out</label>
+                </div>
+                <div class="ps-2">
+                  <input
+                    class="form-control-sm border border-0 bg-light"
+                    type="date"
+                    name="checkOut"
+                    style="width: 95%"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- Guest Start -->
+
+              <div class="col-2 dropdown p-0" style="height: 100%">
+                <div
+                  class="btn btn-light rounded-pill shadow-sm"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 100%; height: 100%"
+                  data-bs-offset="-120,15"
+                >
+                  <div
+                    class="text-start small fw-bold ps-3"
+                    style="height: 50%"
+                  >
+                    Guests
+                  </div>
+                  <div
+                    class="text-start small text-secondary ps-3"
+                    style="height: 50%"
+                  >
+                    Add Guests
+                  </div>
+                </div>
+                <ul
+                  style="border-radius: 5%"
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                      style="width: 330px; height: 70px"
+                    >
+                      <label class="p-4 fw-bold" for="adults"
+                        >Adults<br /><small class="text-muted fw-light"
+                          >Ages 13 or above</small
+                        ></label
+                      >
+                      <input
+                        class="m-4"
+                        type="number"
+                        min="0"
+                        max="8"
+                        name="adults"
+                        required
+                      />
+                    </div>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                      style="width: 330px; height: 70px"
+                    >
+                      <label class="p-4 fw-bold" for="children"
+                        >Children<br /><small class="text-muted fw-light"
+                          >Ages 2–12</small
+                        ></label
+                      >
+                      <input
+                        class="m-4"
+                        type="number"
+                        min="0"
+                        max="5"
+                        name="children"
+                        disabled
+                      />
+                    </div>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                      style="width: 330px; height: 70px"
+                    >
+                      <label class="p-4 fw-bold" for="infants"
+                        >Infants<br /><small class="text-muted fw-light"
+                          >Under 2</small
+                        ></label
+                      >
+                      <input
+                        class="m-4"
+                        type="number"
+                        min="0"
+                        max="5"
+                        name="infants"
+                        disabled
+                      />
+                    </div>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                      style="width: 330px"
+                    >
+                      <label class="p-4 fw-bold" for="pets">Pets</label>
+                      <input
+                        class="m-4"
+                        type="number"
+                        min="0"
+                        max="5"
+                        name="pets"
+                        disabled
+                      />
+                    </div>
+                    <div class="px-4 pb-2 small text-muted fw-light">
+                      If you're lucky enough to have more than 2 pets with you,
+                      be sure to let your host know.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="col-1 p-0 rounded-pill bg-light shadow-sm"
+                style="height: 100%"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center"
+                  style="height: 100%"
+                >
+                  <button
+                    class="bg-danger rounded-circle border border-0"
+                    style="width: 50px; height: 50px"
+                    type="submit"
+                  >
+                    <i class="fas fa-search text-light"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- Guest End -->
             </div>
-            <!-- Guest End -->
+          </div>
+        </div>
+      </form>
+      <!-- Search Bar End -->
+      <div class="row">
+        <div
+          id="flexible"
+          class="
+            col
+            vh-100
+            mt-5
+            mb-5
+            pb-5
+            border border-0
+            rounded-3
+            d-flex
+            flex-column
+            align-items-center
+            justify-content-end
+            bg-danger
+          "
+        >
+          <div class="mb-3">
+            <h1 class="text-light display-4">Not sure where to go? Perfect.</h1>
+          </div>
+          <div>
+            <a
+              href="#"
+              style="width: 157px; height: 52px"
+              class="
+                btn btn-light
+                rounded-pill
+                fw-bold
+                align-middle
+                d-flex
+                align-items-center
+                justify-content-center
+              "
+              ><span class="">I'm flexible</span></a
+            >
           </div>
         </div>
       </div>
-      <!-- Search Bar End -->
     </div>
-
-    <hr />
-    <form action="/listing" method="get"></form>
-    <div class="bg-danger" style="height: 60px">
-      <div class="bg-primary" style="height: 10px"></div>
-      <div class="bg-warning" style="height: 10px"></div>
+    <div class="vh-100 bg-light mt-5 pt-5 pb-5">
+      <div class="container" style="height: 100%">
+        <div class="row pb-5">
+          <h2 class="display-5">Discover Waterbnb Experiences</h2>
+        </div>
+        <div class="row" style="height: 80%">
+          <div class="col bg-primary rounded-3 me-3 p-5">
+            <div class="p-4" style="height: 100%">
+              <div class="bg-primary" style="height: 100%">
+                <div
+                  class="display-5 fw-bold text-light pb-4"
+                  style="max-width: 70%"
+                >
+                  Things to do on your trip
+                </div>
+                <a href="#" class="btn btn-light btn-lg">Experiences</a>
+              </div>
+            </div>
+          </div>
+          <div class="col bg-success rounded-3 ms-3 p-5">
+            <div class="p-4" style="height: 100%">
+              <div class="bg-success" style="height: 100%">
+                <div
+                  class="display-5 fw-bold text-light pb-4"
+                  style="max-width: 70%"
+                >
+                  Things to do from home
+                </div>
+                <a href="#" class="btn btn-light btn-lg">Online Experiences</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Footer Start -->
+    <footer class="" style="height: 50vh; background-color: gainsboro">
+      <div class="container h-100">
+        <div class="row" style="height: 75%">
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Support</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Help Centre</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Safety information</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Cancellation options</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Our COVID-19 Response</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Supporting people with disabilities</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Report a neighbourhood concern</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Community</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Waterbnb.org: disaster relief housing</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Support Afghan refugees</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Celebrating diversity & belonging</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Combating discrimination</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Hosting</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Try hosting</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >WaterCover: protection for Hosts</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Explore hosting resources</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Visit our community forum</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >How to host responsibly</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">About</h3>
+              </div>
 
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Newsroom</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Learn about new features</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Letter from our founder</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Careers</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Investors</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Waterbnb Luxe</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="pt-3">
+              <ul class="list-inline small">
+                <li class="list-inline-item">© 2021 Waterbnb, Pte.</li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Privacy</a>
+                </li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Terms</a>
+                </li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Sitemap</a>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <a href="#" class="text-dark px-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-dark px-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-dark ps-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
