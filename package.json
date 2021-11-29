@@ -18,8 +18,10 @@
   "homepage": "https://github.com/wzjustuslim/project-2-bootcamp#readme",
   "dependencies": {
     "axios": "^0.24.0",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "jssha": "^3.2.0",
     "pg": "^8.7.1"
   },
   "devDependencies": {

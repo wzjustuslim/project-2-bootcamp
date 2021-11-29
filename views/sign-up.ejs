@@ -1,43 +1,655 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="/public/styles.css" rel="stylesheet" />
+
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <title>Sign-up</title>
   </head>
-  <body>
-    <h1>Sign-up Page</h1>
-    <form
-      action="/sign-up"
-      method="post"
-      style="border: solid; border-color: red"
-    >
-      <div>
-        <label for="email">Email</label>
-        <input type="text" name="email" />
-      </div>
+  <body class="bg-light">
+    <header class="bg-light border-bottom border-1">
+      <div class="container">
+        <div class="row g-0" style="height: 80px">
+          <div class="col d-flex align-items-center">
+            <div class="row">
+              <div class="col">
+                <a href="/landing" class="text-decoration-none"
+                  ><i class="fas fa-igloo fs-2 text-danger"></i
+                ></a>
+              </div>
+              <div class="col ps-0 pt-1">
+                <a href="/landing" class="text-decoration-none">
+                  <span class="text-danger fw-bold fs-5">waterbnb</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex align-items-center justify-content-center">
+            <a
+              href="/landing"
+              class="
+                btn btn-light
+                rounded-pill
+                border border-1
+                shadow-sm
+                d-flex
+                justify-content-between
+                align-items-center
+                pe-2
+              "
+              style="width: 300px; height: 48px"
+            >
+              <div class="small fw-bold ps-3">Start your search</div>
+              <div
+                class="
+                  rounded-circle
+                  bg-danger
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                "
+                style="width: 32px; height: 32px"
+              >
+                <i class="fas fa-search text-light small"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col d-flex align-items-center justify-content-end">
+            <div class="row">
+              <div class="col">
+                <!-- Localization Start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn rounded-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  style="width: 46px; height: 42px"
+                >
+                  <i class="fas fa-globe-asia"></i>
+                </button>
 
-      <div>
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" />
-      </div>
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <div class="container p-0">
+                          <div class="row">
+                            <div class="col">
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <!-- Tab Start -->
+                              <ul class="nav">
+                                <li class="nav-item">
+                                  <a
+                                    class="nav-link active text-muted ps-2"
+                                    aria-current="page"
+                                    href="#"
+                                    >Language and region</a
+                                  >
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link text-muted" href="#"
+                                    >Currency</a
+                                  >
+                                </li>
+                              </ul>
+                              <!-- Tab End -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-body">
+                        <h2 class="h5 py-2">Suggested languages and regions</h2>
+                        <ul class="nav py-2">
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                              >English<br /><span class="text-muted fw-light"
+                                >United States</span
+                              ></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                              >English<br /><span class="text-muted fw-light"
+                                >United Kingdom</span
+                              ></a
+                            >
+                          </li>
+                        </ul>
+                        <h2 class="h5 pt-5 pb-2">
+                          Choose a language and region
+                        </h2>
+                        <ul class="nav py-2">
+                          <li class="nav-item p-2">
+                            <a
+                              class="
+                                btn btn-light
+                                text-start
+                                border border-1 border-dark
+                                active
+                              "
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                              >English<br /><span class="text-muted fw-light"
+                                >Singapore</span
+                              ></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              Azərbaycan dili<br /><span
+                                class="text-muted fw-light"
+                              >
+                                Azərbaycan
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              简体中文<br /><span class="text-muted fw-light">
+                                中国
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                          <li class="nav-item p-2">
+                            <a
+                              class="btn btn-light text-start"
+                              href="#"
+                              role="button"
+                              style="width: 11rem"
+                            >
+                              한국어<br /><span class="text-muted fw-light">
+                                대한민국
+                              </span></a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Localization End -->
+              </div>
+              <div class="col g-0">
+                <!-- Dropdown Start -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light rounded-pill border border-1"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="5,15"
+                    aria-expanded="false"
+                    style="width: 77px; height: 42px; padding: 5px 5px 5px 12px"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <i class="fas fa-bars fs-6"></i>
+                      <i class="fas fa-user-circle fs-3 text-secondary"></i>
+                    </div>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end p-2 rounded-3"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <!-- Start Signup -->
+                      <a class="dropdown-item" href="/sign-up">Sign up</a>
 
-      <div>
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" />
-      </div>
+                      <!-- End Signup -->
+                    </li>
+                    <li><a class="dropdown-item" href="#">Log in</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Host your home</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Host an experience</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                  </ul>
+                </div>
+                <!-- Dropdown End -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Search Bar Start -->
 
-      <div>
-        <label for="birthday">Birthday</label>
-        <input type="date" name="birthday" />
+        <!-- Search Bar End -->
       </div>
+    </header>
 
-      <div>
-        <input type="hidden" name="isHost" value="false" />
+    <main class="min-vh-100">
+      <div class="container">
+        <div class="row vh-100">
+          <div class="col-5 mt-5 mx-auto h-75">
+            <form
+              class="form-control"
+              action="/sign-up"
+              method="post"
+              style="border-radius: 6%"
+            >
+              <div class="form-floating mt-3 mx-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="name@example.com"
+                  required
+                />
+                <label for="email" class="text-muted">Email</label>
+              </div>
+
+              <div class="form-floating mt-3 mx-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="@$#!%"
+                  required
+                />
+                <label for="password" class="text-muted">Password</label>
+              </div>
+
+              <div class="form-floating mt-3 mx-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="firstName"
+                  placeholder="john"
+                  required
+                />
+                <label for="firstName" class="text-muted">First Name</label>
+              </div>
+
+              <div class="form-floating mt-3 mx-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="lastName"
+                  placeholder="doe"
+                  required
+                />
+                <label for="lastName" class="text-muted">Last Name</label>
+              </div>
+
+              <div class="form-floating mt-3 mx-3 mb-4">
+                <input
+                  type="date"
+                  class="form-control"
+                  name="birthday"
+                  placeholder="yyyy-mm-dd"
+                  required
+                />
+                <label for="birthday" class="text-muted">Birthday</label>
+              </div>
+
+              <div class="d-grid m-3">
+                <button class="btn btn-danger p-3" type="submit">
+                  SIGN UP
+                </button>
+                <!-- Hidden inputs -->
+
+                <!-- Hidden inputs -->
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+    </main>
+    <!-- Footer Start -->
+    <footer class="" style="height: 50vh; background-color: gainsboro">
+      <div class="container h-100">
+        <div class="row" style="height: 75%">
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Support</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Help Centre</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Safety information</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Cancellation options</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Our COVID-19 Response</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Supporting people with disabilities</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Report a neighbourhood concern</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Community</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Waterbnb.org: disaster relief housing</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Support Afghan refugees</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Celebrating diversity & belonging</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Combating discrimination</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">Hosting</h3>
+              </div>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Try hosting</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >WaterCover: protection for Hosts</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Explore hosting resources</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Visit our community forum</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >How to host responsibly</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col" style="height: 100%">
+            <div class="pt-5">
+              <div class="ps-2">
+                <h3 class="small fw-bold fs-6">About</h3>
+              </div>
 
-      <button type="submit">Submit</button>
-    </form>
+              <ul class="list-unstyled ps-2">
+                <li class="mb-2 mt-3">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Newsroom</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Learn about new features</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Letter from our founder</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Careers</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Investors</a
+                  >
+                </li>
+                <li class="my-2">
+                  <a href="#" class="link-dark text-decoration-none small"
+                    >Waterbnb Luxe</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="pt-3">
+              <ul class="list-inline small">
+                <li class="list-inline-item">© 2021 Waterbnb, Pte.</li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Privacy</a>
+                </li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Terms</a>
+                </li>
+                <li class="list-inline-item text-center">·</li>
+                <li class="list-inline-item">
+                  <a href="#" class="link-dark text-decoration-none">Sitemap</a>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <a href="#" class="text-dark px-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-dark px-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-dark ps-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

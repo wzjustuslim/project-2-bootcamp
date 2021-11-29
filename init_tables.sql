@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
   last_name TEXT,
   email VARCHAR,
   birthday DATE,
-  isHost BOOLEAN
+  password VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS lodgings (
@@ -16,4 +16,14 @@ CREATE TABLE IF NOT EXISTS lodgings (
   availability_end DATE,
   country text,
   host_id INT
+);
+
+CREATE TABLE IF NOT EXISTS reservations (
+  id SERIAL PRIMARY KEY,
+  guest_id INT,
+  lodging_id INT,
+  stay_start DATE,
+  stay_end DATE,
+  price FLOAT,
+  occupancy INT
 );

@@ -355,7 +355,12 @@
                     class="dropdown-menu dropdown-menu-end p-2 rounded-3"
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <li><a class="dropdown-item" href="#">Sign up</a></li>
+                    <li>
+                      <!-- Start Signup -->
+                      <a class="dropdown-item" href="/sign-up">Sign up</a>
+
+                      <!-- End Signup -->
+                    </li>
                     <li><a class="dropdown-item" href="#">Log in</a></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li>
@@ -445,7 +450,7 @@
                 </ul>
               </div>
               <div
-                class="bg-danger rounded-circle"
+                class="bg-secondary rounded-circle"
                 style="width: 56px; height: 56px"
               ></div>
             </div>
@@ -498,42 +503,92 @@
               class="h-75 border border-1 shadow p-4"
               style="border-radius: 5%"
             >
-              <form action="/property" method="post">
+              <form action="/property/:id" method="post">
                 <span class="h5">$<%= resultsArray[0].price %></span
                 ><span class="text-muted"> / night</span>
-                <div class="mt-4">
-                  <div class="form-floating">
-                    <input
-                      class="form-control"
-                      type="date"
-                      value="<%= checkIn %>"
-                      id="checkIn"
-                      placeholder="check-in date"
-                    />
-                    <label for="checkIn" class="small">CHECK-IN</label>
-                  </div>
-                  <div class="form-floating">
-                    <input
-                      class="form-control"
-                      type="date"
-                      value="<%= checkOut %>"
-                      id="checkOut"
-                      placeholder="check-out date"
-                    />
-                    <label for="checkOut" class="small">CHECK-OUT</label>
-                  </div>
-                  <div class="form-floating">
-                    <input
-                      class="form-control"
-                      type="number"
-                      value="<%= adults %>"
-                      id="guests"
-                      placeholder="guest count"
-                    />
-                    <label for="guests" class="small">GUESTS</label>
+                <div class="mt-4 border border-1 rounded-3">
+                  <div class="row">
+                    <div class="col-6 pe-0">
+                      <div class="form-floating border-end">
+                        <input
+                          class="form-control border-0"
+                          type="date"
+                          value="<%= checkIn %>"
+                          name="stayStart"
+                          placeholder="check-in date"
+                        />
+                        <label for="checkIn" class="small">CHECK-IN</label>
+                      </div>
+                    </div>
+                    <div class="col-6 ps-0">
+                      <div class="form-floating">
+                        <input
+                          class="form-control border-0"
+                          type="date"
+                          value="<%= checkOut %>"
+                          name="stayEnd"
+                          placeholder="check-out date"
+                        />
+                        <label for="checkOut" class="small">CHECK-OUT</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating border-top">
+                        <input
+                          class="form-control border-0"
+                          type="number"
+                          value="<%= adults %>"
+                          name="occupancy"
+                          placeholder="guest count"
+                        />
+                        <label for="guests" class="small">GUESTS</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-danger">Reserve</button>
+
+                <div class="d-grid my-3">
+                  <button type="submit" class="btn btn-danger p-3">
+                    Reserve
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <span class="text-center small text-muted"
+                    >You won't be charged yet</span
+                  >
+                </div>
+                <div class="row g-2 my-2">
+                  <div class="col-6">
+                    <span class="text-decoration-underline">Cleaning fee</span>
+                  </div>
+                  <div class="col-6 d-flex justify-content-end">
+                    <span class="">$50</span>
+                  </div>
+                  <div class="col-6">
+                    <span class="text-decoration-underline">Service fee</span>
+                  </div>
+                  <div class="col-6 d-flex justify-content-end">
+                    <span class="">$117</span>
+                  </div>
+                  <div class="col-6">
+                    <span class="text-decoration-underline">Taxes</span>
+                  </div>
+                  <div class="col-6 d-flex justify-content-end">
+                    <span class="">$56</span>
+                  </div>
+                  <hr class="my-3" />
+                </div>
+                <input
+                  type="hidden"
+                  name="price"
+                  value="<%= resultsArray[0].price %>"
+                />
+                <input type="hidden" name="guestId" value="1" />
+                <input
+                  type="hidden"
+                  name="lodgingId"
+                  value="<%= resultsArray[0].id %>"
+                />
               </form>
             </div>
           </div>

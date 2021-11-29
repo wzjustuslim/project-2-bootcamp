@@ -2,6 +2,8 @@ import express from 'express';
 import pg from 'pg';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import cookieParser from 'cookie-parser';
+import jsSHA from 'jssha';
 
 const { Pool } = pg;
 const pgConnectConfigs = {
@@ -16,16 +18,18 @@ const PORT = 3004;
 const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 // eslint-disable-next-line no-underscore-dangle
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, '/public')));
 
-///
+// route complete
 app.get('/landing', (req, res) => {
   res.render('landing');
 });
 
+// route complete
 app.get('/listing', (req, res) => {
   const {
     location, checkIn, checkOut, adults,
@@ -46,6 +50,7 @@ app.get('/listing', (req, res) => {
     });
 });
 
+// route complete
 app.get('/property/:id', (req, res) => {
   const {
     location, checkIn, checkOut, adults,
@@ -69,51 +74,60 @@ app.get('/property/:id', (req, res) => {
     });
 });
 
-app.get('/confirm', (req, res) => {
-  res.render('confirm');
-});
-///
+// route complete
+app.post('/property/:id', (req, res) => {
+  const {
+    guestId, lodgingId, stayStart, stayEnd, price, occupancy,
+  } = req.body;
 
+  const inputData = [guestId, lodgingId, stayStart, stayEnd, price, occupancy];
+  console.log(inputData);
+  pool.query('INSERT INTO reservations (guest_id, lodging_id, stay_start, stay_end, price, occupancy) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', inputData)
+    .then((result) => {
+      console.log(result.rows[0]);
+      res.redirect('http://localhost:3004/landing');
+    })
+    .catch((error) => {
+      console.log(error.stack);
+    });
+});
+
+// route complete
 app.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+// route complete
 app.post('/sign-up', (req, res) => {
   const {
-    email, firstName, lastName, birthday, isHost,
+    email, firstName, lastName, birthday, password,
   } = req.body;
-  const inputData = [firstName, lastName, email, birthday, isHost];
-  console.log(inputData);
-  // res.render('sign-up');
-  pool.query('INSERT INTO users (first_name, last_name, email, birthday, isHost) VALUES ($1, $2, $3, $4, $5) RETURNING *', inputData)
-    .then((result) => {
-      console.log(result.rows[0]);
-      res.render('sign-up');
-    }).catch((error) => {
-      console.log(error.stack); });
-});
 
-app.get('/account', (req, res) => {
-  // temp hardcode use cookie next
-  const inputData = [1];
-  pool.query('SELECT * FROM users WHERE id=$1', inputData)
+  const shaObj = new jsSHA('SHA-512', 'TEXT', { encoding: 'UTF8' });
+  shaObj.update(password);
+  const hashedPassword = shaObj.getHash('HEX');
+
+  const inputData = [firstName, lastName, email, birthday, hashedPassword];
+  console.log(inputData);
+
+  // res.render('sign-up');
+  pool.query('INSERT INTO users (first_name, last_name, email, birthday, password) VALUES ($1, $2, $3, $4, $5) RETURNING *', inputData)
     .then((result) => {
       console.log(result.rows[0]);
-      const outputData = result.rows[0];
-      res.render('account', outputData);
+      res.redirect('http://localhost:3004/landing');
     }).catch((error) => {
       console.log(error.stack);
     });
 });
 
-app.post('/account', (req, res) => {
-  // update details?
-});
+// working here
 
+// admin host
 app.get('/hosting', (req, res) => {
   res.render('hosting');
 });
 
+// admin post
 app.post('/hosting', (req, res) => {
   const {
     name, price, capacity, availabilityStart, availabilityEnd, country, hostId,
