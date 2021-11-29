@@ -540,6 +540,8 @@
                           value="<%= adults %>"
                           name="occupancy"
                           placeholder="guest count"
+                          min="1"
+                          max="<%= resultsArray[0].capacity %>"
                         />
                         <label for="guests" class="small">GUESTS</label>
                       </div>

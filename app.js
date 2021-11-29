@@ -152,7 +152,7 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
-// working here
+// route complete
 app.post('/login', (req, res) => {
   const searchParams = [req.body.email];
   pool.query('SELECT * FROM users WHERE email=$1', searchParams)
