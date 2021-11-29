@@ -23,7 +23,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Sign-up</title>
+    <title>Login</title>
   </head>
   <body class="bg-light">
     <header class="bg-light border-bottom border-1">
@@ -387,12 +387,7 @@
       <div class="container">
         <div class="row vh-100">
           <div class="col-5 mt-5 mx-auto h-75">
-            <form
-              class="form-control"
-              action="/sign-up"
-              method="post"
-              style="border-radius: 6%"
-            >
+            <form class="form-control rounded-3" action="/login" method="post">
               <div class="form-floating mt-3 mx-3">
                 <input
                   type="email"
@@ -415,46 +410,8 @@
                 <label for="password" class="text-muted">Password</label>
               </div>
 
-              <div class="form-floating mt-3 mx-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="firstName"
-                  placeholder="john"
-                  required
-                />
-                <label for="firstName" class="text-muted">First Name</label>
-              </div>
-
-              <div class="form-floating mt-3 mx-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="lastName"
-                  placeholder="doe"
-                  required
-                />
-                <label for="lastName" class="text-muted">Last Name</label>
-              </div>
-
-              <div class="form-floating mt-3 mx-3 mb-4">
-                <input
-                  type="date"
-                  class="form-control"
-                  name="birthday"
-                  placeholder="yyyy-mm-dd"
-                  required
-                />
-                <label for="birthday" class="text-muted">Birthday</label>
-              </div>
-
               <div class="d-grid m-3">
-                <button class="btn btn-danger p-3" type="submit">
-                  SIGN UP
-                </button>
-                <!-- Hidden inputs -->
-
-                <!-- Hidden inputs -->
+                <button class="btn btn-danger p-3" type="submit">LOGIN</button>
               </div>
             </form>
           </div>

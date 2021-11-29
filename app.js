@@ -24,6 +24,22 @@ app.use(cookieParser());
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, '/public')));
 
+const makeSaltHash = (str, salt) => {
+  const cryo = 'shenhe';
+  let seq;
+
+  if (salt) {
+    seq = `${str}-${cryo}`;
+  } else {
+    seq = str;
+  }
+
+  const shaObj = new jsSHA('SHA-512', 'TEXT', { encoding: 'UTF8' });
+  shaObj.update(seq);
+  const hashedStr = shaObj.getHash('HEX');
+  return hashedStr;
+};
+
 // route complete
 app.get('/landing', (req, res) => {
   res.render('landing');
@@ -76,6 +92,17 @@ app.get('/property/:id', (req, res) => {
 
 // route complete
 app.post('/property/:id', (req, res) => {
+  if (!(req.cookies.userName) || !(req.cookies.loggedInHash)) {
+    res.status(403).send('please login');
+  }
+
+  const { userName, loggedInHash } = req.cookies;
+  const hashCookie = makeSaltHash(userName, true);
+
+  if (hashCookie !== loggedInHash) {
+    res.status(403).send('please login');
+  }
+
   const {
     guestId, lodgingId, stayStart, stayEnd, price, occupancy,
   } = req.body;
@@ -120,7 +147,38 @@ app.post('/sign-up', (req, res) => {
     });
 });
 
+// route complete
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
 // working here
+app.post('/login', (req, res) => {
+  const searchParams = [req.body.email];
+  pool.query('SELECT * FROM users WHERE email=$1', searchParams)
+    .then((result) => {
+      if (result.rows.length === 0) {
+        res.status(403).send('login failed');
+        throw new Error('no such user');
+      }
+
+      const user = result.rows[0];
+
+      const hashedPassword = makeSaltHash(req.body.password, false);
+
+      if (user.password !== hashedPassword) {
+        res.status(403).send('login failed');
+        throw new Error('wrong password');
+      }
+
+      res.cookie('userName', req.body.email);
+      res.cookie('loggedInHash', makeSaltHash(req.body.email, true));
+
+      res.send('login ok');
+    }).catch((error) => {
+      console.log(error.stack);
+    });
+});
 
 // admin host
 app.get('/hosting', (req, res) => {
