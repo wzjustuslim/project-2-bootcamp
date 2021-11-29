@@ -401,13 +401,29 @@
                   <li class="list-inline-item">· Air conditioning</li>
                   <li class="list-inline-item">· Washing machine</li>
                 </ul>
-                <a href="#" class="btn btn-danger stretched-link"
-                  >$<%= home.price %> SGD / night</a
-                >
+
+                <form action="/property/<%= home.id %>">
+                  <button type="submit" class="btn btn-danger stretched-link">
+                    $<%= home.price %> SGD / night
+                  </button>
+                  <input
+                    type="hidden"
+                    name="location"
+                    value="<%= location %>"
+                  />
+                  <input type="hidden" name="checkIn" value="<%= checkIn %>" />
+                  <input
+                    type="hidden"
+                    name="checkOut"
+                    value="<%= checkOut %>"
+                  />
+                  <input type="hidden" name="adults" value="<%= adults %>" />
+                </form>
               </div>
             </div>
             <!-- Card End -->
           </div>
+
           <% }); %>
         </div>
       </div>

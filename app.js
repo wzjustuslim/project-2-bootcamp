@@ -1,6 +1,7 @@
 import express from 'express';
 import pg from 'pg';
-import axios from 'axios';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const { Pool } = pg;
 const pgConnectConfigs = {
@@ -15,7 +16,10 @@ const PORT = 3004;
 const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
+
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(__dirname, '/public')));
 
 ///
 app.get('/landing', (req, res) => {
@@ -32,7 +36,9 @@ app.get('/listing', (req, res) => {
   pool.query('SELECT * FROM lodgings WHERE country=$1 AND availability_start<=$2 AND availability_end>=$3 AND capacity>=$4', searchParams)
     .then((result) => {
       const resultsArray = result.rows;
-      const data = { resultsArray };
+      const data = {
+        resultsArray, location, checkIn, checkOut, adults,
+      };
       console.log(data);
       res.render('listing', data);
     }).catch((error) => {
@@ -40,8 +46,27 @@ app.get('/listing', (req, res) => {
     });
 });
 
-app.get('/property', (req, res) => {
-  res.render('property');
+app.get('/property/:id', (req, res) => {
+  const {
+    location, checkIn, checkOut, adults,
+  } = req.query;
+
+  const { id } = req.params;
+
+  const searchParams = [id];
+
+  pool.query('SELECT * FROM lodgings WHERE id=$1', searchParams)
+    .then((result) => {
+      const resultsArray = result.rows;
+
+      const data = {
+        resultsArray, location, checkIn, checkOut, adults,
+      };
+      console.log(data);
+      res.render('property', data);
+    }).catch((error) => {
+      console.log(error.stack);
+    });
 });
 
 app.get('/confirm', (req, res) => {
