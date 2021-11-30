@@ -34,6 +34,7 @@ const makeSaltHash = (str, salt) => {
     seq = str;
   }
 
+  // eslint-disable-next-line new-cap
   const shaObj = new jsSHA('SHA-512', 'TEXT', { encoding: 'UTF8' });
   shaObj.update(seq);
   const hashedStr = shaObj.getHash('HEX');
@@ -130,6 +131,7 @@ app.post('/sign-up', (req, res) => {
     email, firstName, lastName, birthday, password,
   } = req.body;
 
+  // eslint-disable-next-line new-cap
   const shaObj = new jsSHA('SHA-512', 'TEXT', { encoding: 'UTF8' });
   shaObj.update(password);
   const hashedPassword = shaObj.getHash('HEX');
